@@ -3,7 +3,10 @@ MAINTAINER Matt Keehan <matt.keehan@gmail.com>
 
 # Install apache, PHP, and other required tools
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-  apache2 php7.4 php7.4-mysql libapache2-mod-php7.4 curl git zip unzip php-zip php-xml
+  apache2 php7.4 php7.4-mysql libapache2-mod-php7.4 curl git zip unzip php-zip php-xml npm
+
+# install yarn
+RUN npm i -g yarn
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer  
