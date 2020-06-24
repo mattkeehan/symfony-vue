@@ -11,3 +11,7 @@ docker exec -it 00e5 /bin/bash
 visit http://localhost:8080/lucky/bumber
 
 (an example of annotation based routing to controller)
+
+make tables
+
+RUN php bin/console doctrine:migrations:migrate

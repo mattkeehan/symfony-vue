@@ -3,7 +3,10 @@ MAINTAINER Matt Keehan <matt.keehan@gmail.com>
 
 # Install apache, PHP, and other required tools
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-  apache2 php7.4 php7.4-mysql libapache2-mod-php7.4 curl git zip unzip php-zip php-xml npm
+  apache2 php7.4 php7.4-mysql libapache2-mod-php7.4 curl git zip unzip php-zip php-xml npm mysql-server
+
+# run mysql 
+RUN service mysql start
 
 # install yarn
 RUN npm i -g yarn
